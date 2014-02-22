@@ -4,201 +4,406 @@
 <title>Red Ball Part One</title>
 <script src="http://lrn.icstars.org/redball.js"></script>
 <script>
+
+
 function sayhello()
 {
 alert("hello Martina Josimovska");
 }
 function moveleft()
 {
-redball.left= (redball.left-5);
+redball.left= redball.left-5;
 }
 function moveright()
 {
-redball.left= (redball.left+5);
+redball.left= redball.left+5;
 }
 function movetop()
 {
-redball.top= (redball.top-5);
+redball.top= redball.top-5;
 }
 
 function movedown()
 {
-redball.top= (redball.top+5);
+redball.top= redball.top+5;
 }
+
+function movetopleft() {
+    while (redball.left + 5 > 5) {
+        movetop();
+        moveleft();
+        moveleft();
+        moveleft();
+    }
+}
+
+function movetopright() {
+
+    while (redball.top + 5 > 5) {
+        movetop();
+        moveright();
+    }
+}
+
+function movebottomright() {
+    var w = window.innerWidth;
+    while ((redball.left + 220) < w) {
+        movedown();
+        moveright();
+        moveright();
+        moveright();
+    }
+}
+
+function movebackbottom() {
+    var h = window.innerHeight;
+    while ((redball.top + 220) < h) {
+        movedown();
+        moveright();
+        moveright();
+        moveright();
+    }
+}
+
+function movebottomleft() {
+    var h = window.innerHeight;
+    while ((redball.top + 220) < h) {
+        movedown();
+        moveleft();
+        moveleft();
+        moveleft();
+    }
+}
+function movebacktopright(){
+     var w = window.innerWidth;
+	 while ((redball.left+220) < w) {
+	  movetop();
+	  moveright();
+	  moveright();
+	  moveright();
+	  }
+}
+
+function movebacktopleft(){
+	while ((redball.top +5 > 5)){
+		movetop();
+		moveleft();
+		moveleft();
+		moveleft();
+	}
+}
+
+function movebackbottomleft(){
+	while (redball.left+5>5){
+		movedown();
+		moveleft();
+		moveleft();
+		moveleft();
+	}
+}
+
+function movebacktostart(){
+	while(redball.top<100){
+		moveright();
+		movedown();
+	}
+}
+
 
 function movesquare()
 {
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
+moveright();
+moveright();
+moveright();
+moveright();
+moveright();
+moveright();
+moveright();
+moveright();
+moveright();
+moveright();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+
 }
 
 function moverectangle()
 {
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.left=(redball.left+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.top=(redball.top+5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.left=(redball.left-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
-redball.top=(redball.top-5);
+moveright();
+moveright();
+moveright();
+moveright();
+moveright();
+moveright();
+moveright();
+moveright();
+moveright();
+moveright();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+movedown();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
+movetop();
 }
+
+function movetriangle()
+{
+moveright();
+movetop();
+moveright();
+movetop();
+moveright();
+movetop();
+moveright();
+movetop();
+moveright();
+movetop();
+moveright();
+movetop();
+moveright();
+movetop();
+moveright();
+movetop();
+movedown();
+moveright();
+movedown();
+moveright();
+movedown();
+moveright();
+movedown();
+moveright();
+movedown();
+moveright();
+movedown();
+moveright();
+movedown();
+moveright();
+movedown();
+moveright();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+moveleft();
+
+
+
+}
+
+function movediamond() {
+movetop();
+moveright();
+movetop();
+moveright();
+movetop();
+moveright();
+movetop();
+moveright();
+movetop();
+moveright();
+movetop();
+moveright();
+movetop();
+moveright();
+movetop();
+moveright();
+movetop();
+moveright();
+movetop();
+moveright();
+movetop();
+moveright();
+movetop();
+moveright();
+movedown();
+moveright();
+movedown();
+moveright();
+movedown();
+moveright();
+movedown();
+moveright();
+movedown();
+moveright();
+movedown();
+moveright();
+movedown();
+moveright();
+movedown();
+moveright();
+movedown();
+moveright();
+movedown();
+moveright();
+movedown();
+moveright();
+movedown();
+moveright();
+movedown();
+moveleft();
+movedown();
+moveleft();
+movedown();
+moveleft();
+movedown();
+moveleft();
+movedown();
+moveleft();
+movedown();
+moveleft();
+movedown();
+moveleft();
+movedown();
+moveleft();
+movedown();
+moveleft();
+movedown();
+moveleft();
+movedown();
+moveleft();
+movedown();
+moveleft();
+movetop();
+moveleft();
+movetop();
+moveleft();
+movetop();
+moveleft();
+movetop();
+moveleft();
+movetop();
+moveleft();
+movetop();
+moveleft();
+movetop();
+moveleft();
+movetop();
+moveleft();
+movetop();
+moveleft();
+movetop();
+moveleft();
+movetop();
+moveleft();
+movetop();
+moveleft();
+}
+
+
+function bounce() {
+redball.left = 50;
+redball.top = 100;
+movetopleft();
+movetopright();
+movebottomright();
+movebottomleft();
+movetopleft();
+movebackbottom();
+movebacktopright();
+movebacktopleft();
+movebackbottomleft();
+movebacktostart();
+}
+
+
+
+
+
+
 
 
 
@@ -221,6 +426,13 @@ redball.top=(redball.top-5);
 <button onclick="movesquare();">Move Square</button>
 
 <button onclick="moverectangle();">Move Rectangle</button> 
+
+<button onclick="movetriangle();">Move Triangle</button>
+
+<button onclick="movediamond();">Move Diamond</button>
+
+<button onclick="bounce();">Bounce</button> 
+
 
 
 
