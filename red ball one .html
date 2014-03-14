@@ -29,7 +29,7 @@ redball.top= redball.top+5;
 }
 
 function movetopleft() {
-    while (redball.left + 5 > 5) {
+    while (redball.left > 0) { //Move the ball diagonally while it's x-position is not yet zero.
         movetop();
         moveleft();
         moveleft();
@@ -38,26 +38,37 @@ function movetopleft() {
 }
 
 function movetopright() {
-
-    while (redball.top + 5 > 5) {
+    //Move the ball diagonally while it's y-position is not yet zero.
+    while (redball.top > 0) {
         movetop();
         moveright();
     }
 }
 
 function movebottomright() {
-    var w = window.innerWidth;
-    while ((redball.left + 220) < w) {
+    var w = window.innerWidth; //get the total width of the window
+    while ((redball.left + 225) < w) { //move the ball diagonally while it's x-postion + 225(the size of the ball image) is less than the total width of the window
         movedown();
         moveright();
         moveright();
         moveright();
+    }
+}
+
+
+function movebottomleft() {
+    var h = window.innerHeight; //get the total height of the window
+    while ((redball.top + 220) < h) { //move the ball diagonally while it's y-postion + 225(the size of the ball image) is less than the total height of the window
+        movedown();
+        moveleft();
+        moveleft();
+        moveleft();
     }
 }
 
 function movebackbottom() {
-    var h = window.innerHeight;
-    while ((redball.top + 220) < h) {
+    var h = window.innerHeight; //get the total height of the window
+    while ((redball.top + 225) < h) { //move the ball diagonally while it's y-postion + 225(the size of the ball image) is less than the total height of the window
         movedown();
         moveright();
         moveright();
@@ -65,15 +76,6 @@ function movebackbottom() {
     }
 }
 
-function movebottomleft() {
-    var h = window.innerHeight;
-    while ((redball.top + 220) < h) {
-        movedown();
-        moveleft();
-        moveleft();
-        moveleft();
-    }
-}
 function movebacktopright(){
      var w = window.innerWidth;
 	 while ((redball.left+220) < w) {
@@ -85,7 +87,7 @@ function movebacktopright(){
 }
 
 function movebacktopleft(){
-	while ((redball.top +5 > 5)){
+	while ((redball.top > 0)){
 		movetop();
 		moveleft();
 		moveleft();
@@ -94,7 +96,7 @@ function movebacktopleft(){
 }
 
 function movebackbottomleft(){
-	while (redball.left+5>5){
+	while (redball.left > 0){
 		movedown();
 		moveleft();
 		moveleft();
@@ -103,7 +105,7 @@ function movebackbottomleft(){
 }
 
 function movebacktostart(){
-	while(redball.top<100){
+	while(redball.top < 100){
 		moveright();
 		movedown();
 	}

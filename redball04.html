@@ -1,0 +1,104 @@
+<!DOCTYPE> 
+<html>
+	<head>
+		<style>
+			.ball{
+					position:absolute;
+					left:200px;
+				 }
+		</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+</script>
+</head>
+<script>
+	function Ball(cssid)
+	{
+		this.moveright=function()
+	{
+		var position=$(cssid).offset();
+		console.log("left "+position.left);
+		console.log("top "+position.top);
+		position.left=position.left+20;
+		$(cssid).offset(position);
+	}
+		this.movedown=function()
+	{
+	    var position=$(cssid).offset();
+		console.log("top"+position.top);
+		position.top=position.top+20;
+		$(cssid).offset(position);
+    }
+	
+ 		this.moveup=function ()
+ 	{
+		var position=$(cssid).offset();
+ 		console.log("top "+position.top);
+ 		position.top=position.top-20;
+ 		$(cssid).offset(position);	
+ 	}
+ 		this.moveleft=function()
+ 	{
+ 		var position=$(cssid).offset();
+ 		console.log("left "+position.left);
+ 		position.left=position.left-20;
+ 		$(cssid).offset(position);	
+ 	}								
+ 		this.moveupleft=function()
+ 	{
+ 		var position=$(cssid).offset();
+ 		console.log("left "+position.left);
+ 		console.log("top "+position.top);
+ 		position.left=position.left-20;
+ 		position.top=position.top-20;
+ 		$(cssid).offset(position);
+    }
+ 		this.moveupright=function()
+ 	{
+ 		var position=$(cssid).offset();
+ 		console.log("left "+position.left);
+ 		console.log("top "+position.top);
+ 		position.left=position.left+20;
+ 		position.top=position.top-20;
+ 		$(cssid).offset(position);
+ 	}
+ 		this.movedownleft=function()
+ 	{
+ 		var position=$(cssid).offset();
+ 		console.log("left "+position.left);
+ 		console.log("top "+position.top);
+ 		position.left=position.left-20;
+ 		position.top=position.top+20;
+ 		$(cssid).offset(position);
+ 	}
+	
+ 		this.movedownright=function()
+ 	{
+ 		var position=$(cssid).offset();
+ 		console.log("left "+position.left);
+ 		console.log("top "+position.top);
+ 		position.left=position.left+20;
+ 		position.top=position.top+20;
+ 		$(cssid).offset(position);
+    }
+	}
+	
+		var redball=new Ball ("#redball");
+		var greenball=new Ball ("#greenball");
+		var blackball=new Ball ("#blackball");
+		var zebraball=new Ball ("#zebraball");
+		var leopardball=new Ball ("#leopardball");
+		var yellowball=new Ball ("#yellowball");
+	
+ 
+</script>
+	</head>
+		 <body>
+
+<img src="redball.jpg" id="redball" class="ball"/>
+<img src="greenball.jpg" id="greenball" class="ball"/>
+<img src="blackball.jpg" id="blackball" class="ball"/>
+<img src="zebraball.jpg" id="zebraball" class="ball"/>
+<img src="leopardball.jpg" id="leopardball" class="ball"/>
+<img src="yellowball.jpg" id="yellowball" class="ball"/>
+		</body>
+	</html>
