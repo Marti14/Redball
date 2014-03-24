@@ -1,0 +1,353 @@
+<!DOCTYPE> 
+<html>
+	<head>
+		<style>
+			 	.ball{
+				  position:absolute;
+				  width:150px;
+				  height:150px;
+				 }
+				 
+				 td,img{
+					width:50px;
+					height:50px
+						}
+				.top {
+			     position: fixed;
+				 top: 0;
+					}
+				.left {
+				 position: fixed;
+				 left: 0;
+					}
+			   .right {
+				position: fixed;
+				right: 0;
+					}
+			   .bottom {
+				position: fixed;
+				bottom: 0;
+				}
+				   #yellowball{
+					position:absolute;
+					left:30%;
+					top:30%;
+					}
+
+					#purpleball{
+					position:absolute;
+					left:55%;
+					top:30%;
+					}
+
+					#redball{
+					position:absolute;
+					left:30%;
+					top:70%;
+					}
+
+					#zebraball{
+					position:absolute;
+					left:55%;
+					top:70%;
+					}
+
+			 
+				
+				 
+				 
+		</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+</script>
+</head>
+<script>
+
+$(function () { 
+	    $("#yul").click(function () {
+	        yellowball.moveupleft();
+	    });
+	    $("#yu").click(function () {
+	        yellowball.moveup();
+	    });
+	    $("#yur").click(function () {
+	        yellowball.moveupright();
+	    });
+	    $("#yl").click(function () {
+	        yellowball.moveleft();
+	    });
+	    $("#yr").click(function () {
+	        yellowball.moveright();
+	    });
+	    $("#ydl").click(function () {
+	        yellowball.movedownleft();
+	    });
+	    $("#yd").click(function () {
+	        yellowball.movedown();
+	    });
+	    $("#ydr").click(function () {
+	        yellowball.movedownright();
+	    });
+	
+	
+	    $("#pul").click(function () {
+	        purpleball.moveupleft();
+	    });
+	    $("#pu").click(function () {
+	         purpleball.moveup();
+	    });
+	    $("#pur").click(function () {
+	         purpleball.moveupright();
+	    });
+	    $("#pl").click(function () {
+	         purpleball.moveleft();
+	    });
+	    $("#pr").click(function () {
+	         purpleball.moveright();
+	    });
+	    $("#pdl").click(function () {
+	         purpleball.movedownleft();
+	    });
+	    $("#pd").click(function () {
+	         purpleball.movedown();
+	    });
+	    $("#pdr").click(function () {
+	         purpleball.movedownright();
+	    });
+	
+	    $("#rul").click(function () {
+	        redball.moveupleft();
+	    });
+	    $("#ru").click(function () {
+	         redball.moveup();
+	    });
+	    $("#rur").click(function () {
+	         redball.moveupright();
+	    });
+	    $("#rl").click(function () {
+	         redball.moveleft();
+	    });
+	    $("#rr").click(function () {
+	         redball.moveright();
+	    });
+	    $("#rdl").click(function () {
+	         redball.movedownleft();
+	    });
+	    $("#rd").click(function () {
+	         redball.movedown();
+	    });
+	    $("#rdr").click(function () {
+	         redball.movedownright();
+	    });
+	
+	    $("#zul").click(function () {
+	        zebraball.moveupleft();
+	    });
+	    $("#zu").click(function () {
+	         zebraball.moveup();
+	    });
+	    $("#zur").click(function () {
+	         zebraball.moveupright();
+	    });
+	    $("#zl").click(function () {
+	         zebraball.moveleft();
+	    });
+	    $("#zr").click(function () {
+	         zebraball.moveright();
+	    });
+	    $("#zdl").click(function () {
+	         zebraball.movedownleft();
+	    });
+	    $("#zd").click(function () {
+	         zebraball.movedown();
+	    });
+	    $("#zdr").click(function () {
+	         zebraball.movedownright();
+	    });
+	});
+
+	function Ball(cssid)
+	{
+		this.moveright=function()
+	{
+		var position=$(cssid).offset();
+		console.log("left "+position.left);
+		console.log("top "+position.top);
+		position.left=position.left+20;
+		$(cssid).offset(position);
+	}
+		this.movedown=function()
+	{
+	    var position=$(cssid).offset();
+		console.log("top"+position.top);
+		position.top=position.top+20;
+		$(cssid).offset(position);
+    }
+	
+ 		this.moveup=function ()
+ 	{
+		var position=$(cssid).offset();
+ 		console.log("top "+position.top);
+ 		position.top=position.top-20;
+ 		$(cssid).offset(position);	
+ 	}
+ 		this.moveleft=function()
+ 	{
+ 		var position=$(cssid).offset();
+ 		console.log("left "+position.left);
+ 		position.left=position.left-20;
+ 		$(cssid).offset(position);	
+ 	}								
+ 		this.moveupleft=function()
+ 	{
+ 		var position=$(cssid).offset();
+ 		console.log("left "+position.left);
+ 		console.log("top "+position.top);
+ 		position.left=position.left-20;
+ 		position.top=position.top-20;
+ 		$(cssid).offset(position);
+    }
+ 		this.moveupright=function()
+ 	{
+ 		var position=$(cssid).offset();
+ 		console.log("left "+position.left);
+ 		console.log("top "+position.top);
+ 		position.left=position.left+20;
+ 		position.top=position.top-20;
+ 		$(cssid).offset(position);
+ 	}
+ 		this.movedownleft=function()
+ 	{
+ 		var position=$(cssid).offset();
+ 		console.log("left "+position.left);
+ 		console.log("top "+position.top);
+ 		position.left=position.left-20;
+ 		position.top=position.top+20;
+ 		$(cssid).offset(position);
+ 	}
+	
+ 		this.movedownright=function()
+ 	{
+ 		var position=$(cssid).offset();
+ 		console.log("left "+position.left);
+ 		console.log("top "+position.top);
+ 		position.left=position.left+20;
+ 		position.top=position.top+20;
+ 		$(cssid).offset(position);
+    }
+	}
+	
+		var redball=new Ball ("#redball");
+		var purpleball=new Ball ("#purpleball");
+		var zebraball=new Ball ("#zebraball");
+		var yellowball=new Ball ("#yellowball");
+	
+ 
+</script>
+	</head>
+		 <body background="back.gif"> 
+
+
+
+
+
+<img src="purpleball.jpg" id="purpleball" class="ball"/>
+<img src="zebraball.jpg" id="zebraball" class="ball"/>
+<img src="redball.jpg" id="redball" class="ball"/>
+<img src="yellowball.jpg" id="yellowball" class="ball"/>
+
+
+		
+
+	<!--yellowball-->
+	 <table class="left" border="2px">
+		<tbody>
+		        <tr>
+				<td id="yul"> <img src="leftup.jpg"/></td>
+				<td id="yu"> <img src="up.jpg"/></td>
+				<td id="yur"> <img src="rightup.jpg"/></td>
+				</tr>
+				
+				<tr>
+				<td id="yl"> <img src="left.jpg""/></td>
+				<td> <img src="yellowball.jpg"/></td>
+				<td id="yr"> <img src="right.jpg"/></td>
+				</tr>
+				
+				<tr>
+				<td id="ydl"><img src="leftdown.jpg"/></td>
+				<td id="yd"> <img src="down.jpg"/></td>
+				<td id="ydr"> <img src="rightdown.jpg"/></td>
+				</tr>
+				</tbody>
+				</table>
+				
+				<!--purpleball-->
+				<table class="right"border="2px">
+				<tbody>
+				<tr>
+                <td id="pul"> <img src="leftup.jpg"/></td>
+				<td id="pu"> <img src="up.jpg"/></td>
+				<td id="pur"> <img src="rightup.jpg"/></td>
+				
+				<tr>
+				<td id="pl"> <img src="left.jpg"/></td>
+				<td> <img src="purpleball.jpg"/></td>
+				<td id="pr"> <img src="right.jpg"/></td>
+				</tr>
+				
+				<tr>
+				<td id="pdl"> <img src="leftdown.jpg"/></td>
+				<td id="pd"> <img src="down.jpg"/></td>
+				<td id="pdr"> <img src="rightdown.jpg"/></td>				
+				</tr>
+				</table>
+				
+				<!--redball-->
+				<table class="bottom left"border="2px">
+				<tbody>
+				<tr>
+				<td id="rul"> <img src="leftup.jpg"/></td>
+				<td id="ru"> <img src="up.jpg"/></td>
+				<td id="rur"> <img src="rightup.jpg"/></td>
+				</tr>
+				
+				<tr>
+				<td id="rl"> <img src="left.jpg"/></td>
+				<td> <img src="redball.jpg"/></td>
+				<td id="rr"> <img src="right.jpg"/></td>
+				</tr>
+				
+				<tr>
+				<td id="rdl"> <img src="leftdown.jpg"/></td>
+				<td id="rd"> <img src="down.jpg"/></td>
+				<td id="rdr"> <img src="rightdown.jpg"/></td>
+				</tr>
+				</tbody>
+				</table>
+				
+				<!--zebraball-->
+				<table class="bottom right"border="2px">
+				<tbody>
+				<tr>
+                <td id="zul"> <img src="leftup.jpg"/></td>
+				<td  id="zu"> <img src="up.jpg"/></td>
+				<td id="zur"> <img src="rightup.jpg"/></td>				
+				</tr>
+				
+				<tr>
+				<td id="zl"> <img src="left.jpg"/></td>
+				<td> <img src="zebraball.jpg"/></td>
+				<td id="zr"> <img src="right.jpg"/></td>
+				</tr>
+				
+				<tr>
+				<td id="zdl"> <img src="leftdown.jpg"/></td>
+				<td id="zd"> <img src="down.jpg"/></td>
+				<td id="zdr"> <img src="rightdown.jpg"/></td>
+		        </tr>
+				</tbody>
+			</table>
+			</body>
+	
+</html>
+
