@@ -1,0 +1,37 @@
+Define values for wall
+Get image for wall
+Set values for wall right, wall left, wall top and wall bottom
+													
+
+Define ball
+
+ball top is equal to top ball value
+ball bottom is equal to the bottom ball value
+ball left is equal to left ball value 
+ball right is equal to right ball value  
+						
+
+
+Define ball movement 
+Wall Hit
+
+If ball right is greater than wall left 
+move ball left 
+hit set to true
+return hit
+
+
+If ball bottom is greater than wall top
+move ball up
+hit set to true
+return hit
+
+If ball top is less than well bottom
+move ball down
+hit set to true
+return hit
+
+If ball left is less than wall right
+move ball right
+hit set to true
+return hit
