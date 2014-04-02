@@ -1,17 +1,17 @@
-<!DOCTYPE> 
+
 <html>
 	<head>
 		<style>
 				#wall{
-				position:absolute;
-				width: 10px;
-				height: 200px;
-				left: 140px;
-				top: 970px;
-				background-color: blue;
-				}
+	
+				position: absolute;
+				width:10px;
+				height:200px;
+				top:140px;
+				left:970px;
+				background-color: pink;
+			}
 
- 
       
 			 	.ball{
 				  position:absolute;
@@ -182,37 +182,113 @@ $(function () {
 
 
 	function Ball(cssid)
+{
+	<!--check wall hit below-->
+	
+	this.checkwallhit=function()
 	{
+	
+		var hit=false;
+		var ballposition=$(cssid).offset();
+    	var ballwidth=$(cssid).width();
+    	var ballheight=$(cssid).height();
+    	var ballleft=ballposition.left;
+    	var balltop=ballposition.top;
+    	var ballright=ballleft+ballwidth;
+    	var ballbottom=balltop+ballheight;
+
+		
+		var wallposition=$("#wall").offset();
+    	var wallwidth=$("#wall").width();
+    	var wallheight=$("#wall").height();
+    	var wallleft=wallposition.left;
+    	var walltop=wallposition.top;
+    	var wallright=wallleft+wallwidth;
+    	var wallbottom=walltop+wallheight;
+
+
+		if (ballright>wallleft && 
+		ballbottom>walltop &&
+	    balltop<wallbottom &&
+	    ballleft<wallright)
+	    {
+        hit=true;
+        }
+
+        return hit;
+    
+   };
+
+
 		this.moveright=function()
 	{
+		var hittingwall=this.checkwallhit()
+		if(hittingwall==false)
+		{
 		var position=$(cssid).offset();
-		console.log("left "+position.left);
-		console.log("top "+position.top);
+		//console.log("left "+position.left);
+		//console.log("top "+position.top);
 		position.left=position.left+20;
 		$(cssid).offset(position);
+		}
+		else
+		{
+		console.log("hit");
+		}
 	}
 		this.movedown=function()
 	{
+		var hittingwall=this.checkwallhit()
+		if(hittingwall==false)
+		{
+
 	    var position=$(cssid).offset();
 		console.log("top"+position.top);
 		position.top=position.top+20;
 		$(cssid).offset(position);
-    }
+    	}
+    	else
+    	{
+    	console.log("hit");
+    	}
+	}
 	
  		this.moveup=function ()
  	{
+ 	
+ 		var hittingwall=this.checkwallhit()
+ 		if(hittingwall==false)
+ 		{
+
 		var position=$(cssid).offset();
  		console.log("top "+position.top);
  		position.top=position.top-20;
  		$(cssid).offset(position);	
+ 		}
+ 		else
+ 		{
+ 		console.log("hit");
+ 		}
  	}
  		this.moveleft=function()
- 	{
+	 {
+ 		   var hittingwall=this.checkwallhit()
+ 		   if(hittingwall==false)
+ 		   {
  		var position=$(cssid).offset();
- 		console.log("left "+position.left);
+ 		//console.log("left"+pos.left);
+ 		//console.log("top"+pos.top);
  		position.left=position.left-20;
- 		$(cssid).offset(position);	
- 	}								
+ 		$(cssid).offset(position);
+ 			}
+		else
+ 		{
+ 		console.log("hit");
+ 		}
+	 }
+
+ 		
+ 									
  		this.moveupleft=function()
  	{
  		var position=$(cssid).offset();
@@ -250,8 +326,8 @@ $(function () {
  		position.top=position.top+20;
  		$(cssid).offset(position);
     }
-	}
 	
+}	
 		var redball=new Ball ("#redball");
 		var purpleball=new Ball ("#purpleball");
 		var zebraball=new Ball ("#zebraball");
@@ -275,7 +351,10 @@ function subtract (num1,num2)
 
 
 	</head>
-		 
+		 <body background="back.gif"> 
+		 	
+		 	<div id="wall">
+		 	</div>
 
 
 
