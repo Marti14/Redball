@@ -5,7 +5,7 @@
 				#wall{
 	
 				position: absolute;
-				width:10px;
+				width:100px;
 				height:200px;
 				top:140px;
 				left:970px;
@@ -217,117 +217,189 @@ $(function () {
 
         return hit;
     
-   };
+   }
 
 
-		this.moveright=function()
-	{
-		var hittingwall=this.checkwallhit()
-		if(hittingwall==false)
-		{
-		var position=$(cssid).offset();
-		//console.log("left "+position.left);
-		//console.log("top "+position.top);
-		position.left=position.left+20;
-		$(cssid).offset(position);
-		}
-		else
-		{
-		console.log("hit");
-		}
-	}
-		this.movedown=function()
-	{
-		var hittingwall=this.checkwallhit()
-		if(hittingwall==false)
-		{
+		
 
-	    var position=$(cssid).offset();
-		console.log("top"+position.top);
-		position.top=position.top+20;
-		$(cssid).offset(position);
-    	}
-    	else
-    	{
-    	console.log("hit");
-    	}
-	}
-	
- 		this.moveup=function ()
- 	{
- 	
- 		var hittingwall=this.checkwallhit()
- 		if(hittingwall==false)
- 		{
+				this.moveright = function ()
+				{
+				   var isHit = this.checkwallhit();
 
-		var position=$(cssid).offset();
- 		console.log("top "+position.top);
- 		position.top=position.top-20;
- 		$(cssid).offset(position);	
- 		}
- 		else
- 		{
- 		console.log("hit");
- 		}
- 	}
- 		this.moveleft=function()
-	 {
- 		   var hittingwall=this.checkwallhit()
- 		   if(hittingwall==false)
- 		   {
- 		var position=$(cssid).offset();
- 		//console.log("left"+pos.left);
- 		//console.log("top"+pos.top);
- 		position.left=position.left-20;
- 		$(cssid).offset(position);
- 			}
-		else
- 		{
- 		console.log("hit");
- 		}
-	 }
 
- 		
- 									
- 		this.moveupleft=function()
- 	{
- 		var position=$(cssid).offset();
- 		console.log("left "+position.left);
- 		console.log("top "+position.top);
- 		position.left=position.left-20;
- 		position.top=position.top-20;
- 		$(cssid).offset(position);
-    }
- 		this.moveupright=function()
- 	{
- 		var position=$(cssid).offset();
- 		console.log("left "+position.left);
- 		console.log("top "+position.top);
- 		position.left=position.left+20;
- 		position.top=position.top-20;
- 		$(cssid).offset(position);
- 	}
- 		this.movedownleft=function()
- 	{
- 		var position=$(cssid).offset();
- 		console.log("left "+position.left);
- 		console.log("top "+position.top);
- 		position.left=position.left-20;
- 		position.top=position.top+20;
- 		$(cssid).offset(position);
- 	}
-	
- 		this.movedownright=function()
- 	{
- 		var position=$(cssid).offset();
- 		console.log("left "+position.left);
- 		console.log("top "+position.top);
- 		position.left=position.left+20;
- 		position.top=position.top+20;
- 		$(cssid).offset(position);
-    }
-	
-}	
+						var pos = $(cssid).offset();
+						console.log("left:" + pos.left);	
+						if(isHit == false)
+						{
+							pos.left = pos.left + 20;
+						}
+						else
+						{
+							pos.left = pos.left - 20;
+						}
+						$(cssid).offset(pos);
+						console.log("left:" + pos.left);
+
+				}
+
+				this.moveleft = function ()
+				{
+				    var isHit = this.checkwallhit();
+
+					var pos = $(cssid).offset();
+					console.log("left:" + pos.left);
+
+					 if(isHit == false)
+					 {	
+						pos.left = pos.left - 20;
+					 }
+					else
+					{
+					   pos.left = pos.left + 20;
+					}
+
+					$(cssid).offset(pos);
+					console.log("left:" + pos.left);
+				}
+
+				this.movedown = function ()
+				{
+					var isHit = this.checkwallhit();
+
+					var pos = $(cssid).offset();
+					console.log("top:" + pos.top);
+
+					if(isHit == false)
+					{					
+					pos.top = pos.top + 20;
+					}
+					else
+					{
+					   pos.top = pos.top - 20;
+					}
+
+
+					$(cssid).offset(pos);
+					console.log("top:" + pos.top);
+				}	
+
+				this.moveup = function ()
+				{
+				    var isHit = this.checkwallhit();
+
+					var pos = $(cssid).offset();
+					console.log("top:" + pos.top);
+
+					if(isHit == false)
+					{
+					pos.top = pos.top - 20;
+					}
+					else
+					{
+					   pos.top = pos.top + 20;
+					}
+
+
+					$(cssid).offset(pos);
+					console.log("top:" + pos.top);
+				}	
+
+				this.moveupleft = function ()
+				{
+					var isHit = this.checkwallhit();
+
+					var pos = $(cssid).offset();
+					console.log("top:" + pos.top);
+					console.log("left:" + pos.left);	
+
+					if(isHit == false)
+					{
+						pos.top = pos.top - 20;
+						pos.left = pos.left - 20;
+				    }
+				    else
+				    {
+				    	pos.top = pos.top + 20;
+						pos.left = pos.left + 20;
+				    }
+
+					$(cssid).offset(pos);
+					console.log("top:" + pos.top);
+					console.log("left:" + pos.left);
+				}	
+
+				this.moveupright= function ()
+				{
+					var isHit = this.checkwallhit();
+
+					var pos = $(cssid).offset();
+					console.log("top:" + pos.top);
+					console.log("left:" + pos.left);
+
+					if(isHit == false)
+					{	
+						pos.top = pos.top - 20;
+						pos.left = pos.left + 20;
+				    }
+				    else
+				    {
+				    	pos.top = pos.top + 20;
+						pos.left = pos.left - 20;
+				    }
+
+					$(cssid).offset(pos);
+					console.log("top:" + pos.top);
+					console.log("left:" + pos.left);
+				}
+
+				this.movedownleft = function ()
+				{
+					var isHit = this.checkwallhit();
+
+					var pos = $(cssid).offset();
+					console.log("top:" + pos.top);
+					console.log("left:" + pos.left);	
+
+					if(isHit == false)
+					{
+						pos.top = pos.top + 20;
+						pos.left = pos.left - 20;
+					}
+					else
+					{
+						pos.top = pos.top - 20;
+						pos.left = pos.left + 20;
+					}
+
+					$(cssid).offset(pos);
+					console.log("top:" + pos.top);
+					console.log("left:" + pos.left);
+				}
+
+				this.movedownright= function ()
+				{
+					var isHit = this.checkwallhit();
+
+					var pos = $(cssid).offset();
+					console.log("top:" + pos.top);
+					console.log("left:" + pos.left);
+
+					if(isHit == false)
+					{
+						pos.top = pos.top + 20;
+						pos.left = pos.left + 20;
+				    }
+				    else
+				    {
+				    	pos.top = pos.top - 20;
+						pos.left = pos.left - 20;
+				    }
+
+					$(cssid).offset(pos);
+					console.log("top:" + pos.top);
+					console.log("left:" + pos.left);
+				}
+			}
 		var redball=new Ball ("#redball");
 		var purpleball=new Ball ("#purpleball");
 		var zebraball=new Ball ("#zebraball");
